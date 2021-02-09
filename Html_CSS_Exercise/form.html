@@ -1,0 +1,186 @@
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+
+    <title>My Form</title>
+    <style>
+        body {
+            padding-left: 4%;
+            padding-right: 4%;
+            margin-top: 0;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            color: #1dca91;
+
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            max-width: 35.5%;
+            margin-left: 30.4%;
+            padding: 1.7%;
+            border-left-style: solid;
+            border-right-style: solid;
+
+            border-color: gray;
+            border-width: 1px;
+            font-family: 'Quicksand', sans-serif;
+
+        }
+
+        .card {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            max-width: 80%;
+
+        }
+
+        .card-heading {
+            margin-top: 5px;
+            display: block;
+            background-color: gray;
+            width: 38%;
+            height: auto;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            color: white;
+            padding: 0.5%;
+
+        }
+
+        .card-footer {
+
+            display: block;
+            border-style: solid;
+            border-width: thin;
+            border-color: gray;
+            width: 36.8%;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            background-color: beige;
+            padding: 1%;
+
+        }
+
+        .form-control {
+            height: 27px;
+            border-radius: 5px;
+            border-width: thin;
+            color: gray;
+            margin-bottom: 6px;
+            padding: 5px;
+            border-color: gray;
+        }
+
+        .form-center {
+            display: flex;
+            justify-content: center;
+
+        }
+
+        button {
+            padding: 10px;
+            font-size: large;
+            font-weight: 800;
+            border-radius: 8px;
+            font-family: 'Quicksand', sans-serif;
+            background-color: 1dca91;
+            color: white;
+            border: none;
+            margin-right: 18px;
+
+
+        }
+
+        .form-head {
+            background-color: gray;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="top-nav">
+        <h1>TO THE NEW</h1>
+        <div style="padding-top: 3%;">
+            <span>Home</span>
+            <span style="padding-left: 20px;">Quick Help</span>
+        </div>
+    </div>
+    <hr>
+    <form method="POST">
+        <div class="form-center">
+            <div class="card-heading">
+                <div>
+                    <h2 style="margin-left: 20px;">Bug Report</h2>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="">
+            <div class="form">
+                <label for="txtTitle">Title:*</label>
+                <input type="text" name="txtTitle" id="txtTitle" class="form-control" />
+                <label for="txtDesc">Description:*</label>
+                <textarea cols="10" rows="4" name="txtDesc" id="txtDesc" style="border-radius: 5px;"></textarea>
+                <label for="os">Operating System:*</label>
+                <select id="os" class="form-control" style="color: white; background-color:#1dca91;">
+                    <option value=1 selected>Windows XP</option>
+                    <option value=2>macOS</option>
+                    <option value=3>Linux</option>
+                    <option value=4>Android</option>
+                    <option value=5>iOS</option>
+                </select>
+                <label for="product">Product:*</label>
+                <select id="product" class="form-control" style="color: white; background-color:#1dca91">
+                    <option value=1 selected>Formoid</option>
+                    <option value=2></option>
+                    <option value=3></option>
+                    <option value=4></option>
+                    <option value=5></option>
+                </select>
+                <label for="txtVersion">Version:*</label>
+                <input type="text" name="txtVersion" class="form-control" style="max-width: 30%;" />
+                <label for="rbLicense">License:*</label>
+                <div style="display: flex;justify-content: space-around;">
+                    <div style="display: inline-block;">
+                        <input type="radio" id="1" name="rbLicense"> <label for="1">Free</label>
+                    </div>
+                    <div style="display: inline-block;">
+                        <input type="radio" id="2" name="rbLicense"><label for="2">Business</label>
+                    </div>
+                </div>
+                <label for="Severity">Severity:*</label>
+                <select id="severity" class="form-control" style="color: white; background-color:#1dca91;">
+                    <option value=1 selected>Critical</option>
+                    <option value=2></option>
+                    <option value=3></option>
+                    <option value=4></option>
+                    <option value=5></option>
+                </select>
+                <label>Attachments:*</label>
+                <input type="file" />
+            </div>
+        </div>
+        <div class="form-center">
+            <div class="card-footer ">
+                <div style="display: flex; justify-content: flex-end;">
+                    <button type="submit">Send</button>
+
+                </div>
+            </div>
+        </div>
+        </div>
+    </form>
+
+</body>
+
+</html>
