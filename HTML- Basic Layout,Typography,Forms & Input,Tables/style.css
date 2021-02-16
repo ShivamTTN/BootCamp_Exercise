@@ -1,0 +1,100 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+header.fixed {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: black;
+}
+
+header div {
+
+    padding: 10px 20px 5px 20px;
+    /*TRBL*/
+    display: flex;
+    justify-content: space-between;
+}
+
+.button {
+    height: 50px;
+    width: 100px;
+    color: white;
+    background-color: goldenrod;
+    border-color: black;
+    font-size: large;
+}
+
+.sidenav {
+    height: 100%;
+    width: 140px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color:gray;
+    padding: 20px 0px 0px 20px;
+    margin-top: 85px;
+
+}
+
+.sidenav a {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    margin-left: 160px;
+    margin-top: 110px;
+    z-index: -1;
+    padding: 10px 20px 0px 10px;
+}
+
+.div-blocks {
+    display: flex;
+    justify-content: space-between;
+}
+
+.div-blocks div {
+    height: 150px;
+    width: 150px;
+}
+
+.text {
+    font-size: large;
+    text-align: justify;
+    padding: 0px 10px 0px 20px;
+}
+
+.form {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form input {
+    border-radius: 2px;
+    border-color: black;
+    width: 30%;
+    font-size: large;
+
+}
+
+table {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
