@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <style>
+
+        </style>
+    </head>
+    <body>
+        <div id="here_table" class="here_table"></div>
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+           $(document).ready(function(){
+            var content = "<table>";
+                var str = "main";
+            $.ajax({url: "https://jsonplaceholder.typicode.com/users", async: false, success: function(result) {
+               // console.log(result.length);
+              
+                for(i=0;i<result.length;i++){
+                    content +=  '<tr id = '+ result[i].id +'><td>' + result[i].id + '</td><td>'+ result[i].name+ '</td><td>' + result[i].username + '</td><td>' + result[i].email + '</td><td><button value='+ i +' class='+ str +'>X</button></td></tr>' ;
+                }
+                content += "</table>"
+                $('#here_table').append(content); 
+            }}); 
+           $("table").attr("border","2");
+           $("button").on("click",function(){
+            
+               var id = $(this).val();
+               $("table tr button").each(function(){
+                if($(this).val() == id)
+                {          
+                    var i = parseInt(id) +1;
+                    console.log(i);
+                    console.log(id);
+                    $("#"+i).remove();
+                }
+               });
+            
+           })
+        }); 
+    </script>
+</html>

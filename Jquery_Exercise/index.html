@@ -1,0 +1,308 @@
+<html>
+    <head>
+        <title>
+            Jquery
+        </title>
+        <style>
+        .btn {
+            padding: 10px;
+            font-size: large;
+            font-weight: 800;
+            border-radius: 8px;
+            font-family: 'Quicksand', sans-serif;
+            background-color: 1dca91;
+            color: white;
+            border: none;
+            margin-right: 18px;
+            width: 55px;
+        }
+        </style>
+    </head>
+    <body>
+       <!--
+        <p id="test">This Line with id test</p>
+       
+        <p class="para-new" style="color: red;">This text color is going to be change as its class name is para-new</p>
+
+        <form method="POST">
+            <input type="submit" />
+        </form>
+        -->
+        <!--<div id="main">
+            <p class="target">Change the font size of ".target" which has parent element with id name "#main"</p>
+        </div>
+        
+        <div >
+            After page load change the HTML of div element with "p" element
+        </div>
+        -->
+       <!--
+            <select name="cars" id="cars">
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="mercedes">Mercedes</option>
+                <option value="audi">Audi</option>
+            </select>
+       -->
+         
+        <!--  <div class="selected-value"></div>
+
+          </div>
+
+          <div class="btn">
+            <button value="Hover on me!" id="hover">Hover On Me! </button>
+          </div>
+          <div class="dropdown">
+                <p>File</p>
+                <p>Edit</p>
+                <p>Insert</p>
+        </div>
+        <br>
+        <a class="google" href="https://google.com">Click For Google</a>
+        -->
+       <!-- <ul>
+            <li>system</li>
+            
+        </ul>  
+        <ul>
+            <li>foo</li>
+            <li>bar</li>
+        </ul>-->
+
+        <!--<table border="1">
+            <tr>
+                <td>98</td>
+            </tr>
+            <tr>
+                <td>9</td>
+            </tr>
+            <tr>
+                <td>68</td>
+            </tr>
+            <tr>
+                <td>46</td>
+            </tr>
+            <tr>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>99</td>
+            </tr>
+        </table>-->
+        <form method="post">
+        <div id="here_table"></div>
+
+        <!--<button class="q7a">First Button</button>
+        <button class="q7b">Second Button</button>-->
+    </form>
+    <div id="slider" class="slider">
+        
+    </div>
+        
+                
+    </body> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+
+
+        //17th Question
+        $(document).ready(function(){
+            var images = [
+            "https://www.wallpapertip.com/wmimgs/46-462920_awesome-nature-landscape-your-hd-wallpaper-papel-de.jpg",
+            "https://cdn.wallpapersafari.com/20/87/BJux94.jpg",
+            "https://wallpapercave.com/wp/jiJZXEJ.jpg",
+            "https://wallpapercave.com/wp/7eKbNsz.jpg",
+            "https://www.wallpapertip.com/wmimgs/43-438165_nature-wallpaper-pack-9-cute-girls-celebrity-wallpaper.jpg"
+            ];
+            var img = $("<img />",{
+                height:"200px",
+                width:"200px"
+            });
+            $(".slider").append(img);
+            //$("img").attr("src",images[1]);
+            var i = 0;
+            while(true)
+            {
+                
+                $("img").attr("src",images[i]);
+                i++;
+                $("img").slideUp(1500).delay(20).fadeIn(1200);
+                if(i==4){
+                    break;
+                }
+            }
+
+        });
+
+        //16th Question
+       /*$(document).ready(function(){
+            var content = "<table>";
+                var str = "main";
+            $.ajax({url: "https://jsonplaceholder.typicode.com/users", async: true, success: function(result) {
+               // console.log(result.length);
+              
+                for(i=0;i<result.length;i++){
+                    content +=  '<tr><td>' + result[i].id + '</td><td>'+ result[i].name+ '</td><td>' + result[i].username + '</td><td>' + result[i].email + '</td><td><button value='+ i +' class='+ str +'>X</button></td></tr>' ;
+                }
+                content += "</table>"
+                $('#here_table').append(content); 
+            }}); 
+            $("button").on("click",function(){
+                alert("Hello")
+            });
+           // $("div > table").attr("border","2");
+            //$(".main").css("color","red");
+            //console.log("hrllo");
+        }); */
+
+        //15th Question
+        /*$(document).ready(function(){
+            var content = "<table>";
+            $.ajax({url: "https://jsonplaceholder.typicode.com/users", async: true, success: function(result) {
+               // console.log(result.length);
+              
+                for(i=0;i<result.length;i++){
+                    content +=  '<tr><td>' + result[i].id + '</td><td>'+ result[i].name+ '</td><td>' + result[i].username + '</td><td>' + result[i].email + '</td></tr>';
+                }
+                content += "</table>"
+                $('#here_table').append(content); 
+            }}); 
+            
+            $("div > table").attr("border","2");
+        });*/
+
+        //14th Question
+
+        /*$(document).ready(function(){
+            $("table tr").each(function(index){
+                if(parseInt($(this).text()) > 10)
+                {
+                    $(this).css("color","red");
+                }
+            })
+        });*/
+        //13th Question
+        
+         /*   $(document).ready(function(){
+                var max = 0; 
+                $("ul").each(function(index) {     
+                    if(max < $( this ).height())
+                    {
+                        max = $( this ).height();
+                    }
+               });
+               alert("max Height : " + max); 
+            });
+          */  
+
+        //12th Question
+       /* $(document).ready(function(){
+            $("div").on("click",function(){
+                alert("div clicked");
+            })
+     
+     
+            $("div li").on("click",function(){
+                alert("li clicked");
+            })
+
+            $("div li").on("click",function(e){
+                e.stopPropagation();
+            })
+        });
+        */
+
+
+
+        //11th Question
+
+       /* $(document).ready(function(){
+            $(".google").on("click",function(e){
+                e.preventDefault();
+            })
+        });*/
+
+        //10th Question
+        /*$(document).ready(function(){
+            $(".dropdown").css("display","none");
+            $(".dropdown > p").css("border-width","3px");
+            $(".btn").hover(function(){
+            $(".dropdown").slideToggle();
+                });
+            });*/
+
+
+        //9th Question
+       /* $(document).ready(function(){
+            $('#cars').on('change', function(){
+            let $value = $('option').filter(":selected").text();
+            $('.selected-value').text($value);
+            });
+        });*/
+
+
+        //8th Question
+     /*   $(document).ready(function(){
+            var obj = $("<button id='to_click'>Click me</button>");
+            
+            $("div").append(obj);
+
+            $("#to_click").on("click",function(){
+                alert("Click Working");
+            });
+        });
+*/
+        //7th Question
+       /* $(function(){
+        $('.q7a').on('click', function(){
+            alert('Button A Clicked');
+            $('.q7b').trigger('click');
+        });
+
+        $('.q7b').on('click', function(){
+            alert('Button B Clicked');
+        });
+        });
+*/
+        //6th Question
+      /*  $(document).ready(function(){
+            var obj = $("<p>Replaced One</p>");
+            $("div").replaceWith(obj);
+        });
+        */
+        //5th Question
+        /*$(document).ready(function(){
+            $("#main > .target").css("font-size","24");
+        });
+        */
+        //4th Queston
+       /* $(document).ready(function(){
+            $(":submit").attr('disabled','true');
+        });*/
+
+
+        //3rd Question  
+       /* $(document).ready(function()
+        {
+            $("[class$=-new]").css('color','blue');
+        });
+        */
+
+        //2nd Question
+        /*  $(document).ready(function(){
+            $("#test").attr('class',"load");
+
+        });*/
+
+        // 1st Question
+        /*  $(document).ready(function(){
+            $("#test").attr('class',"load");
+
+        });*/
+
+
+    </script>
+</html>

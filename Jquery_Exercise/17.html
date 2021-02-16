@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img class="slide" width="400" height="200" />
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    var images = [
+        "https://www.wallpapertip.com/wmimgs/46-462920_awesome-nature-landscape-your-hd-wallpaper-papel-de.jpg",
+        "https://cdn.wallpapersafari.com/20/87/BJux94.jpg",
+        "https://wallpapercave.com/wp/jiJZXEJ.jpg",
+        "https://wallpapercave.com/wp/7eKbNsz.jpg",
+        "https://www.wallpapertip.com/wmimgs/43-438165_nature-wallpaper-pack-9-cute-girls-celebrity-wallpaper.jpg"
+    ];
+    var i = 0;
+    var time = 2000;
+    function changeImg() {
+        $('.slide').attr('src', `${images[i]}`);
+        if (i < images.length - 1) {
+            i++;
+        } else {
+            i = 0;
+        }
+        setTimeout("changeImg()", time);
+    }
+    window.onload = changeImg;
+
+</script>
