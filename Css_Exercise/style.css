@@ -1,0 +1,92 @@
+.container
+{
+    padding: 10px;
+}
+.underline
+{
+    text-decoration: underline;
+}
+.font_prop .first
+{
+    font-family: 'Barlow', sans-serif;
+    font-weight: bold;
+    font-size: large;
+    
+}
+.font_prop .second
+{
+    font-style: italic;
+    font-stretch: ultra-condensed;
+}
+.font_prop .third
+{
+    
+    font-family: 'Times New Roman', Times, serif;
+    font-variant: small-caps;
+}
+.font_prop .forth
+{
+    font-size: xx-small;
+}
+.background_prop p
+{
+    background-image: url("https://images.unsplash.com/photo-1529220813929-597ff9755c1f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80");
+    background-repeat: no-repeat;
+    height: 200px;
+    width:200px;
+    background-size: cover;
+    margin: auto;
+    
+}
+.pseudo_prop ul li:nth-of-type(2)
+{
+    margin-bottom: 20px;
+}
+
+.pseudo_prop ul li:first-child
+{
+   
+    font-family: 'Barlow', sans-serif;
+    color: blue;
+}
+
+.pseudo_prop ul li:nth-of-type(odd)
+{
+    font-size: 20px;
+    font-weight: bolder;
+}
+.pseudo_prop ul li:nth-of-type(4):hover
+{
+    color: green;
+}
+.combi_prop h2
+{
+    display: inline;
+    background-color: black;
+    color:white;
+    font-family: 'Barlow', sans-serif;
+}
+.combi_prop > p
+{
+    border: 1px black solid;
+}
+.combi_prop h2 + p
+{
+    background-color: yellow;
+}
+.combi_prop div ~ p
+{
+    background-color: cyan;
+}
+.attrb_prop
+{
+    margin: auto;
+}
+input[type=text]
+{
+    height: 30px;
+    border-radius: 2px;
+    border:1px grey dashed;
+    font-size: large;
+    width: 30%;
+}
