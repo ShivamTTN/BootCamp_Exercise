@@ -1,0 +1,268 @@
+*
+{
+    margin:0;
+    padding:0;
+
+}
+.container
+{
+    font-family: 'Roboto', sans-serif;
+    
+}
+.common-pad
+{
+    padding:8px 150px 8px 150px;
+}
+.top-nav
+{
+    display: flex;
+    justify-content: space-between;
+    background-image: linear-gradient(white, #f8f8f8);
+    font-weight:lighter;
+}
+.top-nav-left-part ul
+{
+
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.top-nav-left-part ul li
+{
+    border-right: 1px black solid;
+    padding-right:10px;
+    padding-left: 10px;
+    font-size: smaller;
+
+}
+.top-nav-left-part ul li:first-child
+{
+    padding-left: 0;
+}
+.top-nav-left-part ul li:last-child
+{
+    border:none;
+}
+
+.my-icon{
+    color:#79b530;
+    padding-right: 10px;
+    font-size: smaller;
+}
+.middle-nav
+{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15px;  
+    /* border:1px solid black; */
+    padding-bottom: 15px;
+   
+}
+.middle-nav-right-part
+{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.middle-nav-icon
+{
+    color:#7bb632;
+    font-size: large;
+    padding-right: 15px;
+    margin-left: 50px;
+    
+    
+}   
+.contact
+{
+    font-weight:lighter;
+}
+.contact p{
+    margin-left: 84px;
+    
+}
+.location
+{
+    margin-top: 10px;
+}
+.middle-nav-btn
+{
+    height: 40px;
+    border:2px solid #7bb632;
+    color: #7bb632;
+    background-color: white;
+    font-weight: 550;
+    padding:5px 20px 5px 20px;
+    margin-left: 45px;
+    cursor: pointer;
+
+}
+.middle-nav-btn:hover
+{
+    color: white;
+    background-color:#7bb632 ;
+}
+.main-nav
+{
+    z-index: 999;   
+    background-color: #7bb632;
+    /* border: 1px solid black; */
+    color: white;
+    font-weight: bolder;
+    height: 25px;
+   position: relative;
+    
+}
+.main-nav ul
+{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between ;
+    font-size: smaller;
+    margin-top: 5px;
+    
+}
+.main-content
+{
+    position: relative;
+   
+}
+.main-img
+{
+    background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.5)), url(assets/banner-image.jpg);
+    background-repeat: no-repeat;
+    /* background-size: cover; */
+    /* background: yellow; */
+    height: 500px;
+    width: 100%;
+    margin-top: -40px;
+    overflow-x: hidden;
+    z-index: 0;
+}
+.main-text
+{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    
+}
+.main-heading
+{
+    color: white;
+    font-weight: 800;
+    font-size: xx-large;
+    line-height: 1.4em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.sub-heading
+{
+    max-width: 570px;
+    padding-top: 20px;
+    color: white;
+    font-weight: 700;
+    font-size: small;
+    
+}
+.main-button
+{
+padding:40px 0 0 0;
+}
+.btn{
+    cursor: pointer;
+    color: white;
+    background:transparent;
+    height: 40px;
+    width: 170px;
+    border: 1px solid white;
+    padding: 0 10px 0 10px;
+    margin-right: 10px;
+    font-weight: 500;
+
+}
+.btn:hover
+{
+    color: white;
+    background:#7bb632;
+    border: none;
+}
+.bottom-content
+{
+    position: absolute;
+    bottom: -30%;
+    left: 12%;
+    display: flex;
+    justify-content: center;
+
+}
+.bottom-first
+{
+    height: 220px;
+    width: 255px;
+    background:#4886ff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.bottom-img
+{
+    border: none;
+    filter: invert(1);
+    height: 50px;
+    width: 50px;
+}
+.bottom-content-heading
+{
+    font-weight: 900;
+    color:white;
+    padding: 20px 20px 0 20px;
+}
+.bottom-content-sub-heading
+{
+    color:white;
+    padding: 20px;
+    text-align: center;
+    font-weight: 500;
+    padding: 10px 20px 0 20px;
+}
+
+
+
+
+.bottom-second
+{
+    height: 220px;
+    width: 255px;
+    background:#ff6f6f;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bottom-third
+{
+    height: 220px;
+    width: 255px;
+    background:#b5d56a;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.bottom-forth
+{
+    height: 220px;
+    width: 255px;
+    background:#fa8147;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
