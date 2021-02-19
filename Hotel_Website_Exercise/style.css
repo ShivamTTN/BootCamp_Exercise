@@ -133,7 +133,7 @@
 {
     background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.5)), url(assets/banner-image.jpg);
     background-repeat: no-repeat;
-    /* background-size: cover; */
+    background-size: cover;
     /* background: yellow; */
     height: 500px;
     width: 100%;
@@ -189,13 +189,18 @@ padding:40px 0 0 0;
     background:#7bb632;
     border: none;
 }
+.bottom
+{
+   
+}
 .bottom-content
 {
     position: absolute;
     bottom: -30%;
-    left: 12%;
+    width: 100%;
     display: flex;
     justify-content: center;
+    
 
 }
 .bottom-first
@@ -211,9 +216,8 @@ padding:40px 0 0 0;
 .bottom-img
 {
     border: none;
-    filter: invert(1);
-    height: 50px;
-    width: 50px;
+    font-size: xx-large;
+    color: white;
 }
 .bottom-content-heading
 {
