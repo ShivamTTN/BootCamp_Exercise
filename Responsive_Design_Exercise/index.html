@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Design</title>
+    <link rel="stylesheet" href="mobile.css" />
+    <link rel="stylesheet" media="screen and (min-width:787px) and (max-width:1200px)" href="ipad.css" />
+    <link rel="stylesheet" media="screen and (min-width:1200px)" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <script src="https://kit.fontawesome.com/f309d64822.js" crossorigin="anonymous"></script>
+    <script>
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "250px";
+        }
+        
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+        }
+        </script>
+</head>
+
+<body>
+    <header>
+        <div class="landing-image">
+            <!-- Nav Item -->
+            <div class="my-nav">
+                <div class="nav-items">
+                    <span> Responsive Layout </span>
+                    <div class="navigation-icon ">
+                        <span><i onclick="openNav()" class="fas fa-bars"></i></span>
+                    </div>
+                    <div id="mySidenav" class="sidenav">
+                        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                        <a href="#">Home</a>
+                        <a href="#">Generic</a>
+                        <a href="#">Elements</a>
+                      </div>
+                    <div class="navigation-links">
+                        <ul>
+                            <li>Home</li>
+                            <li>Generic</li>
+                            <li>Elements</li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Center Item -->
+            <div class="center-items">
+
+                <h2> Welcome </h2>
+                <div class="center-items-icons">
+                    <div class="center-item">
+                        <i class="fas fa-car"></i>
+                        <span class="heading">Travel</span>
+                        <span>Choose a ride</span>
+                    </div>
+
+                    <div class="center-item">
+                        <i class="fas fa-camera"></i>
+                        <span class="heading">Galary</span>
+                        <span>Choose photos</span>
+                    </div>
+                </div>
+                <button class="btn">GET STARTED</button>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="content">
+
+            <div class="content-item-img">
+                <img
+                    src="data:image/jpeg;base64,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" />
+                <p>Lorem ipsum dolor sit consectetur.</p>
+
+                <div class="content-item-desc">
+                    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis voluptatibus quibusdam
+                        sint!</span>
+                    <br>
+                    <button class="btn">LEARN MORE</button>
+                </div>
+            </div>
+
+
+            <div class="content-item-img">
+                <img
+                    src="https://image.freepik.com/free-photo/wireless-headphones-with-cellphone-dark-background_78458-86.jpg" />
+                <p>Lorem ipsum dolor sit consectetur.</p>
+
+                <div class="content-item-desc">
+                    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis voluptatibus quibusdam
+                        sint!</span>
+                    <br>
+                    <button class="btn">LEARN MORE</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</body>
+
+</html>
