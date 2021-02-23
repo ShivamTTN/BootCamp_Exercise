@@ -202,13 +202,19 @@ body
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 }
 .icon-round
 {
     display: block;
     border:1px solid black;
-    padding:0.6rem 0.7rem 0.6rem 0.7rem;
+    padding:0.7rem 0.7rem 0.7rem 0.7rem;
     border-radius: 50%;
+    
+}
+.icon-round:first-child
+{
+    padding:0.7rem 0.9rem 0.7rem 0.9rem;
 }
 .icon-round:hover{
     background-color: black;
