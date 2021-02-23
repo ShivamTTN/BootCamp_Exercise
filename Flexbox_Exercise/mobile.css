@@ -1,0 +1,83 @@
+body
+{
+    font-size: 12px;
+}
+.landing-img
+{
+    height: 100vh;
+    width: 100%;
+}
+.upper-content
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.heading
+{
+    font-size: 2rem;
+}
+.upper-half
+{
+    flex-direction: column;
+    height:auto;
+}
+.lower-half
+{
+    flex-direction: column;
+    height: auto
+}
+.img
+{
+    height: 8rem;
+    width: 8rem;
+    border-radius: 50%;
+    margin-top: 1rem;
+}
+.container-1
+{
+    height: auto;
+}
+.half-content-heading
+{
+    font-size: 2rem;
+    text-align: center;
+}
+.half-content
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container-2
+{
+    height: auto;
+}
+.lower-heading
+{
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+.lower-subheading
+{
+    font-size: 0.7rem;
+    text-align: center;
+}
+.owner-info
+{
+    width: 90%;
+    display: inline-flex;
+    flex-direction: column;
+    
+}
+.owner-info div
+{
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+button
+{
+    margin-bottom: 1rem;
+}

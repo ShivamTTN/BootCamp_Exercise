@@ -1,0 +1,69 @@
+body
+{
+    font-size: 14px;
+}
+.container-1
+{
+    height: auto;
+}
+.upper-half
+{
+    flex-direction: column;
+    height:auto;
+}
+.lower-half
+{
+    flex-direction: column;
+    height: auto
+}
+.img
+{
+    height: 10rem;
+    width: 10rem;
+    border-radius: 50%;
+    margin-top: 1rem;
+}
+.upper-content
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.half-content
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+button
+{
+    margin-bottom: 1rem;
+}
+.container-2
+{
+    height: auto;
+}
+.lower-heading
+{
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+.lower-subheading
+{
+    font-size: 0.7rem;
+    text-align: center;
+}
+.owner-info
+{
+    width: 70%;
+    display: inline-flex;
+    flex-direction: column;
+    
+}
+.owner-info div
+{
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
