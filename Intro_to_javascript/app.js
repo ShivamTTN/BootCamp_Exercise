@@ -14,7 +14,7 @@ function main () {
 
     var min = d.getMinutes();
     min = ("0" + min).slice(-2);
-
+    setTimeout(2000);
     var sec = d.getSeconds();
     sec = ("0" + sec).slice(-2);
 
@@ -39,6 +39,7 @@ function main () {
     month[10] = "Nov";
     month[11] = "Dec";
     //console.log(date +" "+ month +" "+ year)
+    
     if(temph > 0 && temph<12)
     {
         document.getElementById("wishes").innerHTML = "Good Morning";
@@ -53,7 +54,7 @@ function main () {
     }
     document.getElementById("clock").innerHTML = hour + ":" + min + ":" + sec + " " + state;
     document.getElementById("date").innerHTML = date + " " + month[mon] + " " + year;
-
+    
     
 };
 setInterval(main,1000);
