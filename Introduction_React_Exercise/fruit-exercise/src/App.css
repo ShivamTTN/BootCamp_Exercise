@@ -1,0 +1,30 @@
+.App {
+  
+  height: 100vh;
+  justify-content: space-around;
+  margin: 0 auto;
+  text-align: center;
+  margin: 2rem 0;
+}
+.btn
+{
+  width: 20%;
+  margin: 0 auto;
+  height: 3rem;
+  font-size: 1.3rem;
+  border: 1px solid grey;
+  box-shadow: 3px 3px #ccc;
+  background-color: black;
+  color: white;
+  border-radius: 4px;
+  margin: 2rem 0;
+  
+}
+.App input
+{
+  height: 2.5rem;
+  margin: 0 auto;
+  width: 50%;
+  font-size: 1.5rem;
+  border-radius: 4px;
+}
