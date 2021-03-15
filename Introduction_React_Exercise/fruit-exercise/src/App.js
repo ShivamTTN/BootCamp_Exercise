@@ -6,14 +6,15 @@ import FruitList from './FruitComponent/Fruit';
 class App extends Component {
   state = {
     fruit: [
-      { name: 'Orange', qty: 20 }
-    ]
+      {name:'mango', qty:20}
+    ],
+    str : ''
   };
-  submitClickHandler = (event) => {
+   submitClickHandler = (event) => {
     
     if(event.key ==="Enter" ||  event.type === "click")
     {
-      let str = document.getElementById('str').value;
+      let str = this.state.str;
     let values = str.split('-');
     if (values[0]===undefined || values[1] === undefined) //this dont allow to submit null or string without qty
     {
@@ -27,24 +28,28 @@ class App extends Component {
     const newFruits = [...this.state.fruit];
 
     newFruits.push(fruits);
-    //console.log(oldFruits );
     this.setState({
-      fruit: newFruits
+      fruit: newFruits,
+      str:''
     })
     document.getElementById('str').value = null;
     }
-    
-    
-
   }
+  nameChangeHandler = (event)=>{
+    
+   this.setState({str:event.target.value})   
+  }
+  
   deleteClickHandler = (index) => {
     const originalFruit = [...this.state.fruit];
     originalFruit.splice(index,1);
     this.setState({fruit:originalFruit});
+    
   }
 
+
   render() {
-    // console.log(this.state);
+  
     let MyFruitList=null;
     MyFruitList = (
       <div>
@@ -61,7 +66,7 @@ class App extends Component {
    
     return (
       <div className="App">
-        <input id="str" type='text' onKeyUp={this.submitClickHandler} /><br />
+        <input id="str" type='text' onChange={this.nameChangeHandler} onKeyUp={this.submitClickHandler} /><br />
         <button type="submit" className='btn' onClick={this.submitClickHandler}  >SUBMIT</button>
         {MyFruitList}
         {this.state.fruit.length === 0?<h1>LIST IS EMPTY</h1>:null}
