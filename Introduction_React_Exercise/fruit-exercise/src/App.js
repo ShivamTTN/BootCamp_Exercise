@@ -32,7 +32,7 @@ class App extends Component {
       fruit: newFruits,
       str:''
     })
-    document.getElementById('str').value = null;
+    // document.getElementById('str').value = null;
     }
   }
   nameChangeHandler = (event)=>{
@@ -66,7 +66,7 @@ class App extends Component {
    
     return (
       <div className="App">
-        <input id="str" type='text' onChange={this.nameChangeHandler} onKeyUp={this.submitClickHandler} /><br />
+        <input id="str" value={this.state.str} type='text' onChange={this.nameChangeHandler} onKeyUp={this.submitClickHandler} /><br />
         <button type="submit" className='btn' onClick={this.submitClickHandler}  >SUBMIT</button>
         {MyFruitList}
         {this.state.fruit.length === 0?<h1>LIST IS EMPTY</h1>:null}
