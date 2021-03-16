@@ -14,9 +14,9 @@ const burger = (props) => {
     //console.log(tranformedIn);
     if(tranformedIn.length===0)
     {
-        tranformedIn = <p>Please Add Ingredient <span role="img">&#x1F383;</span></p>
+        tranformedIn = <p>Please Add Ingredient <span role="img" aria-label="pumpkin">&#x1F383;</span></p>
     }
-
+    
     return (
         <div className={classes.Burger}>
             <BurgerIngredient type="bread-top" />

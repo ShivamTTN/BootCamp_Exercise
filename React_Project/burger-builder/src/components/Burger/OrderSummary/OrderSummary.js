@@ -15,7 +15,8 @@ class OrderSummary extends Component{
         return(
             <Aux>
             <h3>Your Order Summary</h3>
-            <p>A <span role="img">&#127828;</span> with following content:</p>
+         
+            <p>A <span role="img" aria-label="burger">&#127828;</span> with following content:</p>
             <ul>
                 {ingredientSummary}
             </ul>
