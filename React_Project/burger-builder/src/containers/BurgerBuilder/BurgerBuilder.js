@@ -22,16 +22,16 @@ class BurgerBuilder extends Component {
         purchasable: false,
         purchasing: false,
         loading: false,
-        error:false,
+        error: false,
     }
     componentDidMount() {
         axios.get('/ingredients.json')
             .then(res => {
                 this.setState({ ingredients: res.data })
             })
-            .catch(err=>{
+            .catch(err => {
                 // console.log(err);
-                this.setState({error:true});
+                this.setState({ error: true });
             })
     }
 
@@ -92,29 +92,39 @@ class BurgerBuilder extends Component {
     }
     purchasingContinueHandler = () => {
         //alert("Successfully Ordered !!!");
-        this.setState({ loading: true });
-        const order = {
-            ingredients: this.state.ingredients,
-            price: this.state.totalPrice,
-            customer: {
-                name: 'max',
-                email: 'text@gmail.com',
-                address: {
-                    street: 'ram chock',
-                    city: 'delhi',
-                    country: 'india'
-                }
-            },
-            deliveryMethod: 'fastest'
+        // this.setState({ loading: true });
+        // const order = {
+        //     ingredients: this.state.ingredients,
+        //     price: this.state.totalPrice,
+        //     customer: {
+        //         name: 'max',
+        //         email: 'text@gmail.com',
+        //         address: {
+        //             street: 'ram chock',
+        //             city: 'delhi',
+        //             country: 'india'
+        //         }
+        //     },
+        //     deliveryMethod: 'fastest'
+        // }
+        // axios.post('/order.json', order)
+        //     .then(res => {
+        //         this.setState({ loading: false, purchasing: false });
+        //     })
+        //     .catch(err => {
+        //         // console.log(err);
+        //         this.setState({ loading: false, purchasing: false });
+        //     })
+        const queryParam = [];
+        for(let i in this.state.ingredients)
+        {
+            queryParam.push(encodeURIComponent(i) + '=' + encodeURIComponent(this.state.ingredients[i]))
         }
-        axios.post('/order.json', order)
-            .then(res => {
-                this.setState({ loading: false, purchasing: false });
-            })
-            .catch(err => {
-                // console.log(err);
-                this.setState({ loading: false, purchasing: false });
-            })
+        const queryString = queryParam.join('&');
+        this.props.history.push({
+            pathname:'/checkout',
+            search: '?' + queryString
+        })
 
     }
 
@@ -126,7 +136,7 @@ class BurgerBuilder extends Component {
             disabledInfo[i] = disabledInfo[i] <= 0;
         }
         let orderSummary = null;
-        let burger = this.state.error?<p style={{textAlign:'center'}}><strong>Ingredient Cant Be Loaded</strong></p>:<Spinner />
+        let burger = this.state.error ? <p style={{ textAlign: 'center' }}><strong>Ingredient Cant Be Loaded</strong></p> : <Spinner />
         if (this.state.ingredients) {
             burger = (
                 <Aux>

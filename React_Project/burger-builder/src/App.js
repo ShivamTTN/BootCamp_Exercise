@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Layout from './containers/Layout/Layout';
 import BurgerBuilder from './containers/BurgerBuilder/BurgerBuilder'
+import Checkout from './containers/Checkout/Checkout'
+import { BrowserRouter, Route } from 'react-router-dom'
 
 class App extends Component {
 
@@ -16,14 +18,16 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <BrowserRouter>
         <Layout >
 
           {/* {this.state.show ? <BurgerBuilder /> : null} */}
-          <BurgerBuilder />
+          
+          <Route path="/checkout" component={Checkout} />
+          <Route path="/" exact component={BurgerBuilder} />
 
         </Layout>
-      </div>
+      </BrowserRouter>
     );
   }
 }
