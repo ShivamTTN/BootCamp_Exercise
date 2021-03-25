@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 
 import { connect } from 'react-redux'
-import * as actionTypes from '../../store/actions'
+// import * as actionTypes from '../../store/actions/actionTypes'
+import * as actionTypes from '../../store/actions/index'
 
 import Aux from '../../hoc/Aux';
 import Burger from '../../components/Burger/Burger'
@@ -19,8 +20,8 @@ class BurgerBuilder extends Component {
        
         purchasable: false,
         purchasing: false,
-        loading: false,
-        error: false,
+        // loading: false,
+        // error: false,
     }
     componentDidMount() {
         // axios.get('/ingredients.json')
@@ -31,6 +32,7 @@ class BurgerBuilder extends Component {
         //         // console.log(err);
         //         this.setState({ error: true });
         //     })
+        this.props.onInitIngredient()
     }
 
     isPerchaseableHandler = (updatedIngredient) => {
@@ -83,24 +85,25 @@ class BurgerBuilder extends Component {
 
     //  }
     purchasingHandler = () => {
-    //     this.setState({ purchasing: true });
-    // }
-    // purchasingCancleHandler = () => {
-    //     this.setState({ purchasing: false });
-    // }
-    // purchasingContinueHandler = () => {
-    //     //alert("Successfully Ordered !!!");
-    //     // 
-    //     const queryParam = [];
-    //     for (let i in this.state.ingredients) {
-    //         queryParam.push(encodeURIComponent(i) + '=' + encodeURIComponent(this.state.ingredients[i]))
-    //     }
-    //     queryParam.push('price=' + this.state.totalPrice);
-    //     const queryString = queryParam.join('&');
+        this.setState({ purchasing: true });
+    }
+    purchasingCancleHandler = () => {
+        this.setState({ purchasing: false });
+    }
+    purchasingContinueHandler = () => {
+        //alert("Successfully Ordered !!!");
+        // 
+        // const queryParam = [];
+        // for (let i in this.state.ingredients) {
+        //     queryParam.push(encodeURIComponent(i) + '=' + encodeURIComponent(this.state.ingredients[i]))
+        // }
+        // queryParam.push('price=' + this.state.totalPrice);
+        // const queryString = queryParam.join('&');
         // this.props.history.push({
         //     pathname: '/checkout',
         //     search: '?' + queryString
         // })
+        this.props.onInitPurchase();
         this.props.history.push('./checkout')
 
     }
@@ -113,7 +116,7 @@ class BurgerBuilder extends Component {
             disabledInfo[i] = disabledInfo[i] <= 0;
         }
         let orderSummary = null;
-        let burger = this.state.error ? <p style={{ textAlign: 'center' }}><strong>Ingredient Cant Be Loaded</strong></p> : <Spinner />
+        let burger = this.props.error ? <p style={{ textAlign: 'center' }}><strong>Ingredient Cant Be Loaded</strong></p> : <Spinner />
         if (this.props.ings) {
             burger = (
                 <Aux>
@@ -136,9 +139,9 @@ class BurgerBuilder extends Component {
                 price={this.props.total_price}
             />
         }
-        if (this.state.loading) {
-            orderSummary = <Spinner />;
-        }
+        // if (this.state.loading) {
+        //     orderSummary = <Spinner />;
+        // }
 
         return (
             <Aux>
@@ -154,15 +157,18 @@ class BurgerBuilder extends Component {
 
 const mapStateToProps = state => {
     return {
-        ings: state.ingredients,
-        total_price: state.totalPrice
+        ings: state.burderBuilder.ingredients,
+        total_price: state.burderBuilder.totalPrice,
+        error:state.burderBuilder.error
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        onIngredientAdded: (ingName) => dispatch({ type: actionTypes.ADD_INGREDIENT, ingredientName: ingName }),
-        onIngredientRemoved: (ingName) => dispatch({ type: actionTypes.REMOVE_INGREDIENT, ingredientName: ingName })
+        onIngredientAdded: (ingName) => dispatch(actionTypes.addIngredient(ingName)),
+        onIngredientRemoved: (ingName) => dispatch(actionTypes.removeIngridient(ingName)),
+        onInitIngredient : ()=>dispatch(actionTypes.initIngredients()),
+        onInitPurchase : ()=>dispatch(actionTypes.purchaseInit())
     }
 }
 
