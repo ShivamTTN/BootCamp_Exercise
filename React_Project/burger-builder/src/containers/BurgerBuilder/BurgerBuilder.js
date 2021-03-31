@@ -15,7 +15,7 @@ import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler'
 
 
 
-class BurgerBuilder extends Component {
+export class BurgerBuilder extends Component {
     state = {
        
         purchasable: false,
