@@ -1,57 +1,78 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Modal from '../../components/UI/Modal/Modal'
 import Aux from '../Aux'
+import useHttpErrorHandler from '../../hooks/http-error-handler'
 
 const withErrorHandler = (WrappedComponent, axios) => {
-    return class extends Component {
-        state = {
-            error: null
-        }
-        constructor(props) {
-            super(props)
-            this.reqInterceptor  = axios.interceptors.request.use(req => {
-                this.setState({ error: null });
-                return req;
-            });
-            this.resInterceptor = axios.interceptors.response.use(res => res, err => {
-                this.setState({ error: err });
-            });
-        }
-        //***********************Deprecated**********************
+    return props => {
+        // const [error, setError] = useState(null)
+        // // state = {
+        // //     error: null
+        // // }
+        // // constructor(props) {
+        // //     super(props)
+        // //     this.reqInterceptor = axios.interceptors.request.use(req => {
+        // //         this.setState({ error: null });
+        // //         return req;
+        // //     });
+        // //     this.resInterceptor = axios.interceptors.response.use(res => res, err => {
+        // //         this.setState({ error: err });
+        // //     });
+        // // }
+        // const reqInterceptor = axios.interceptors.request.use(req => {
+        //     // this.setState({ error: null });
+        //     setError(null)
+        //     return req;
+        // });
+        // const resInterceptor = axios.interceptors.response.use(res => res, err => {
+        //     // this.setState({ error: err });
+        //     setError(err)
+        // });
+        // //***********************Deprecated**********************
 
-        // componentWillMount() { 
-        //     axios.interceptors.request.use(req => {
-        //         this.setState({ error: null });
-        //         return req;
-        //     });
-        //     axios.interceptors.response.use(res => res, err => {
-        //         this.setState({ error: err });
-        //     });
+        // // componentWillMount() { 
+        // //     axios.interceptors.request.use(req => {
+        // //         this.setState({ error: null });
+        // //         return req;
+        // //     });
+        // //     axios.interceptors.response.use(res => res, err => {
+        // //         this.setState({ error: err });
+        // //     });
+        // // }
+
+        // //***********************Deprecated**********************
+
+        // // componentWillUnmount(){
+        // //     // console.log('will Unmount' , this.reqInterceptor , this.resInterceptor)
+        // //     axios.interceptors.request.eject(this.reqInterceptor)
+        // //     axios.interceptors.response.eject(this.resInterceptor)
+        // // }
+
+        // useEffect(() => {
+        //     return () => {
+        //         axios.interceptors.request.eject(reqInterceptor)
+        //         axios.interceptors.response.eject(resInterceptor)
+        //     }
+        // }, [reqInterceptor, resInterceptor])
+
+        // const closeErrorModal = () => {
+        //     // this.setState({ error: null })
+        //     setError(null)
         // }
 
-        //***********************Deprecated**********************
+        const [error, closeErrorModal] = useHttpErrorHandler(axios)
 
-        componentWillUnmount(){
-            // console.log('will Unmount' , this.reqInterceptor , this.resInterceptor)
-            axios.interceptors.request.eject(this.reqInterceptor)
-            axios.interceptors.response.eject(this.resInterceptor)
-        }
+        return (
+            <Aux>
+                <Modal show={error}
+                    closeModel={closeErrorModal}>
 
-        closeErrorModal = () => {
-            this.setState({ error: null })
-        }
-        render() {
-            return (
-                <Aux>
-                    <Modal show={this.state.error}
-                        closeModel={this.closeErrorModal}>
+                    {error ? error.message : null}
+                </Modal>
+                <WrappedComponent {...props} />
+            </Aux>
+        )
 
-                        {this.state.error ? this.state.error.message : null}
-                    </Modal>
-                    <WrappedComponent {...this.props} />
-                </Aux>
-            )
-        }
     }
 }
 
