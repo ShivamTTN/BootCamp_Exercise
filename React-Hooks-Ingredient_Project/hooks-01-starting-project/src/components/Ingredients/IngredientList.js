@@ -3,12 +3,16 @@ import React from 'react';
 import './IngredientList.css';
 
 const IngredientList = props => {
+  console.log("Inside Ingredient List")
   return (
     <section className="ingredient-list">
       <h2>Loaded Ingredients</h2>
       <ul>
         {props.ingredients.map(ig => (
-          <li key={ig.id} onClick={props.onRemoveItem.bind(this, ig.id)}>
+          <li key={ig.id}
+            // onClick={props.onRemoveItem.bind(this, ig.id)}
+            onClick={()=>props.onRemoveItem(ig.id)} //DOUBT
+          >
             <span>{ig.title}</span>
             <span>{ig.amount}x</span>
           </li>
