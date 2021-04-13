@@ -1,0 +1,21 @@
+.container{
+    align-items: center;
+    width: 100%;
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: center;
+}
+.nav {
+    /* box-sizing: border-box; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  width: 80%;
+  height: 10vh;
+ 
+}
+.nav a {
+  text-decoration: none;
+  color: rgb(91, 184, 29);
+}
