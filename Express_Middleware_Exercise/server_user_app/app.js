@@ -22,12 +22,14 @@ app.listen(PORT, () => {
   console.info("Server is running @:http://localhost:%d", PORT);
 });
 // view engine setup
+
+app.use(express.json());
 app.use(cors());
 app.get("/", (req, res) => {
   res.send(JSON.stringify(usersData));
 });
 app.post("/add-user", (req, res) => {
-  console.log(req.data)
+  console.log(req.data);
 });
 
 module.exports = app;

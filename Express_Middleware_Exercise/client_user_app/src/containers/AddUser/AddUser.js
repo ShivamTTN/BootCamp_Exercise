@@ -30,7 +30,7 @@ const AddUser = (props) => {
     };
     console.log(userData);
     axios
-      .post("http://localhost:8080/add-user" + JSON.stringify(userData))
+      .post("http://localhost:8080/add-user",userData)
       .then((res) => {
         console.log(res.data);
         return <Redirect to="/" />;
