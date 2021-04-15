@@ -18,6 +18,18 @@ const User = (props) => {
 
   const deleteUserHandler = (id) => {
     // console.log(userData[id]);
+    const obj = {
+      value: id,
+    };
+    axios
+      .post("http://localhost:8080/", JSON.parse(JSON.stringify(obj)))
+      .then((res) => {
+        console.log("successful");
+      })
+      .catch((err) => {
+        console.log("fail");
+      });
+    // console.log(obj);
     let updatedData = userData.filter((item) => item.id !== id);
     console.log(updatedData);
     setUserData(updatedData);

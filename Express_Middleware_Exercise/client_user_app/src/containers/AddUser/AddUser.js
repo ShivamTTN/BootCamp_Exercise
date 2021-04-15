@@ -28,16 +28,16 @@ const AddUser = (props) => {
       lastname: userLastName,
       email: userEmail,
     };
-    console.log(userData);
+    console.log(JSON.parse(JSON.stringify(userData)));
     axios
-      .post("http://localhost:8080/add-user",userData)
+      .post("http://localhost:8080/addUser", userData)
       .then((res) => {
         console.log(res.data);
-        return <Redirect to="/" />;
       })
       .catch((err) => {
         console.log(err);
       });
+    return <Redirect to="/" />;
   };
 
   return (
