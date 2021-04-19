@@ -7,6 +7,7 @@ const AddUser = (props) => {
   const [userFirstName, setUserFirstName] = useState("");
   const [userLastName, setUserLastName] = useState("");
   const [userEmail, setUserEmail] = useState("");
+  const [useredirect,setRedirect] = useState(false)
 
   const inputIdChangedhandler = (event) => {
     setUserId(event.target.value);
@@ -28,20 +29,30 @@ const AddUser = (props) => {
       lastname: userLastName,
       email: userEmail,
     };
+
     console.log(JSON.parse(JSON.stringify(userData)));
     axios
       .post("http://localhost:8080/addUser", userData)
       .then((res) => {
         console.log(res.data);
+        setRedirect(true)
       })
       .catch((err) => {
         console.log(err);
       });
-    return <Redirect to="/" />;
+      
+    // debugger;
   };
+  let redirect = null;
+  if(useredirect)
+  {
+    redirect = <Redirect to="/" />;
+  }
 
+  
   return (
     <form onSubmit={(event) => submitFormHandler(event)}>
+      {redirect}
       <div>
         ID :
         <input

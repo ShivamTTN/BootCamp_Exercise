@@ -8,6 +8,18 @@ var indexRouter = require("./routes/index");
 const jwt = require("jsonwebtoken");
 var app = express();
 
+mongoose.connect(" mongodb://127.0.0.1:27017/mongo-session", {
+  useNewUrlParser: "true",
+});
+
+mongoose.connection.on("error", (err) => {
+  console.log(err);
+});
+
+mongoose.connection.on("connected", (err, res) => {
+  console.log("mongoose is Connected");
+});
+
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "jade");

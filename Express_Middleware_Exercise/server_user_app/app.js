@@ -1,9 +1,6 @@
-var createError = require("http-errors");
 var express = require("express");
-var path = require("path");
-var cookieParser = require("cookie-parser");
-var logger = require("morgan");
 var cors = require("cors");
+var mongoose = require("mongoose");
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
@@ -17,7 +14,20 @@ let usersData = [
   { id: 5, firstname: "pqr", lastname: "stu", email: "pqr@ttn.com" },
 ];
 var app = express();
-const PORT = 8080;
+
+mongoose.connect(" mongodb://127.0.0.1:27017/mongo-session", {
+  useNewUrlParser: "true",
+});
+
+mongoose.connection.on("error", (err) => {
+  console.log(err);
+});
+
+mongoose.connection.on("connected", (err, res) => {
+  console.log("mongoose is Connected");
+});
+
+const PORT = 3001;
 app.listen(PORT, () => {
   console.info("Server is running @:http://localhost:%d", PORT);
 });

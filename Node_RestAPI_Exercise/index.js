@@ -1,7 +1,21 @@
 const http = require("http");
 const url = require("url");
-const port = 3000;
+const mongoose = require("mongoose");
+const port = 8080;
 // 1st And 2nd Question
+
+mongoose.connect(" mongodb://127.0.0.1:27017/mongo-session", {
+  useNewUrlParser: "true",
+});
+
+mongoose.connection.on("error", (err) => {
+  console.log(err);
+});
+
+mongoose.connection.on("connected", (err, res) => {
+  console.log("mongoose is Connected");
+});
+
 const userObject = [
   {
     username: "shivamsaxena",
