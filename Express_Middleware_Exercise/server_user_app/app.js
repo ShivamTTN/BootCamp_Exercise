@@ -15,19 +15,19 @@ let usersData = [
 ];
 var app = express();
 
-mongoose.connect(" mongodb://127.0.0.1:27017/mongo-session", {
-  useNewUrlParser: "true",
-});
+// mongoose.connect(" mongodb://127.0.0.1:27017/mongo-session", {
+//   useNewUrlParser: "true",
+// });
 
-mongoose.connection.on("error", (err) => {
-  console.log(err);
-});
+// mongoose.connection.on("error", (err) => {
+//   console.log(err);
+// });
 
-mongoose.connection.on("connected", (err, res) => {
-  console.log("mongoose is Connected");
-});
+// mongoose.connection.on("connected", (err, res) => {
+//   console.log("mongoose is Connected");
+// });
 
-const PORT = 3001;
+const PORT = 8080;
 app.listen(PORT, () => {
   console.info("Server is running @:http://localhost:%d", PORT);
 });
@@ -42,7 +42,7 @@ app.get("/", (req, res) => {
 
 app.post("/", (req, res) => {
   // console.log( typeo f(req.body.value));
-  console.log(usersData);
+  // console.log(usersData);
   const filteredUser = usersData.filter((item) => item.id !== +req.body.value);
   usersData = filteredUser.slice();
   // let updatedUserObject = [];
@@ -56,7 +56,8 @@ app.post("/", (req, res) => {
   // usersData = {
   //   ...updatedUserObject,
   // };
-  // console.log(usersData);
+  console.log(usersData);
+  
   res.json({ status: "Success" });
   // console.log(updatedUserObject);
   // console.log(usersData);
