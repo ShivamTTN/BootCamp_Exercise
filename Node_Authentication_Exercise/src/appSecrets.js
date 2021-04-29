@@ -1,0 +1,4 @@
+module.exports={
+    FACEBOOK_APP_ID : '150620400348546' ,
+    FACEBOOK_APP_SECRET : '35316de3ee963b252e4f9cafbe21c8d3',
+}

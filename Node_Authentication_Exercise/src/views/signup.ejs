@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo">SignUp</div>
+      <div class="login-item">
+        <form action="/signup" method="POST" class="form form-login">
+          <div class="form-field">
+            <label class="user" for="login-username"
+              ><span class="hidden">Username</span></label
+            >
+            <input
+              id="login-username"
+              name="Username"
+              type="text"
+              class="form-input"
+              placeholder="Username"
+              required
+            />
+          </div>
+
+          <div class="form-field">
+            <label class="email" for="login-email"
+              ><span class="hidden">Email</span></label
+            >
+            <input
+              id="login-email"
+              name="Email"
+              type="text"
+              class="form-input"
+              placeholder="Email"
+              required
+            />
+          </div>
+
+          <div class="form-field">
+            <label class="lock" for="login-password"
+              ><span class="hidden">Password</span></label
+            >
+            <input
+              id="login-password"
+              name="Password"
+              type="password"
+              class="form-input"
+              placeholder="Password"
+              required
+            />
+          </div>
+
+          <div class="form-field ">
+            <a href="/signup"><button  style="width: 362px;">Sign Up</button></a>
+          </div>
+          <!-- <div class="form-field">
+            <input type="submit" value="Facebook login" />
+          </div> -->
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
